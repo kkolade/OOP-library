@@ -1,4 +1,4 @@
-require './person.rb'
+require './person'
 
 class Teacher < Person
   def initialize(specialization)
@@ -9,8 +9,4 @@ class Teacher < Person
   def can_use_services?
     true
   end
-
-
-Inherits from Person.
-Constructor extends parent's constructor by adding @specialization and a parameter for it.
-Override can_use_services? so it always returns true.
+end
