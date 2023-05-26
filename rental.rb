@@ -10,5 +10,5 @@ class Rental
 
     @book = book
     book.rental << self
-  end  
+  end
 end
