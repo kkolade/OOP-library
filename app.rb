@@ -7,12 +7,12 @@ require './book'
 require './rental'
 
 class App
-  attr_reader :books, :people, :rentals
+  attr_reader :books, :people, :rental
 
-  def initialize(books = [], people = [], rentals = [])
+  def initialize(books = [], people = [], rental = [])
     @books = books
     @people = people
-    @rentals = rentals
+    @rental = rental
   end
 
   def all_books
@@ -78,15 +78,15 @@ class App
     print 'Date: '
     date = gets.chomp
     rental = Rental.new(date, @people[number_people.to_i], @books[number_book.to_i])
-    @rentals << rental unless @rentals.include?(rental)
+    @rental << rental unless @rentals.include?(rental)
   end
 
   def all_rentals_id
     print 'ID of person: '
     id = gets.chomp
-    rentals_of_person = @rentals.filter { |rental| rental.person.id == id.to_i }
+    rental_of_person = @rental.filter { |rental| rental.person.id == id.to_i }
     puts 'Rentals: '
-    rentals_of_person.each do |rental|
+    rental_of_person.each do |rental|
       puts "Date: #{rental.date}, Book:\"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
