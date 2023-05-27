@@ -1,3 +1,5 @@
+require_relative './rental'
+
 class Nameable
   def correct_name
     raise NotImplementedError, "Subclasses must implement 'correct_name' method."
@@ -8,7 +10,7 @@ class Person < Nameable
   attr_accessor :name, :age
   attr_reader :rental, :id
 
-  def initialize(age, parent_permission, name = 'Unknown')
+  def initialize(age:, parent_permission: true, name: 'Unknown')
     super()
     @id = Random.rand(1..1000)
     @name = name
