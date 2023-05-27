@@ -23,7 +23,6 @@ class App
     @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
   end
 
-  # rubocop:disable Metrics/MethodLength
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     option_person = gets.chomp
@@ -53,7 +52,6 @@ class App
     @people << person unless @people.include?(person)
     puts 'Person created successfully'
   end
-  # rubocop:enable Metrics/MethodLength
 
   def create_book
     print 'Title: '
