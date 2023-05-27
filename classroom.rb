@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 class Classroom
   attr_accessor :label
   attr_reader :student

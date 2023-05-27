@@ -38,6 +38,7 @@ class App
       print 'Has parent permission? [Y/N]: '
       has_parent_permission = gets.chomp
       has_permission = has_parent_permission.downcase == 'y'
+      puts "#{name}, #{age}, #{has_permission}"
       person = Student.new(age: age, name: name, parent_permission: has_permission)
 
     when '2'
@@ -78,7 +79,7 @@ class App
     print 'Date: '
     date = gets.chomp
     rental = Rental.new(date, @people[number_people.to_i], @books[number_book.to_i])
-    @rental << rental unless @rentals.include?(rental)
+    @rental << rental unless @rental.include?(rental)
   end
 
   def all_rentals_id
